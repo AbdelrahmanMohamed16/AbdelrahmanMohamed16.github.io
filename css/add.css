@@ -1,6 +1,7 @@
 body {
 font-family: 'Cairo', sans-serif;
 margin: 0;
+overflow-x: hidden;
 }
 .header {
   background-color: #4D3EB8;
@@ -9,17 +10,16 @@ margin: 0;
   letter-spacing: 1px;
 }
 .header .header-content {
-  width: 80%;
-  margin-left: 5%;
+  width: 95%;
+  margin-left: 2.5%;
   display: flex;
   justify-content: space-between;
   background-color: inherit;
-  padding: 0 5% 0;
 }
 .header .header-content .logo{
   display: flex;
   align-items: center;
-  width: fit-content:
+  width: fit-content;
 }
 .header .header-content .logo img{
   height: 50px;
@@ -28,7 +28,7 @@ margin: 0;
 .header .header-content .logo #site-name{
   display: inline-block;
   margin: 0;
-  padding-left: 2px;
+  padding-left: 4%;
   font-size: 25px;
   font-weight: bold;
   min-width: 140px;
