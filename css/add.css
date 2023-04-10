@@ -4,8 +4,7 @@ margin: 0;
 overflow-x: hidden;
 }
 .header {
-  background-color: #4D3EB8;
-  justify-content: center;
+  background-color: #113459;
   color: white;
   letter-spacing: 1px;
 }
@@ -14,7 +13,6 @@ overflow-x: hidden;
   margin-left: 2.5%;
   display: flex;
   justify-content: space-between;
-  background-color: inherit;
 }
 .header .header-content .logo{
   display: flex;
@@ -32,10 +30,11 @@ overflow-x: hidden;
   font-size: 25px;
   font-weight: bold;
   min-width: 140px;
+  color: white;
 }
 .header .header-content .page-links{
   width: 60%;
-  background-color: #322978;
+  /* background-color: #322978; */
   padding: 0 2% 0 2%;
   border-radius: 40px;
 }
@@ -48,7 +47,7 @@ overflow-x: hidden;
 }
 .header .header-content .page-links ul li{
   position: relative;
-  opacity: 70%;
+  opacity: 90%;
 }
 .header .header-content .page-links ul li:hover{
   opacity: 100%;
@@ -66,20 +65,21 @@ overflow-x: hidden;
 .header .header-content .page-links ul li:hover::after{
   width: 100%;
   height: 2px;
-  background-color: white;
+  background-color: whitesmoke;
   bottom: -2;
   right: 0%;
 }
 .header .header-content .page-links a {
   text-transform: capitalize;
   text-decoration: none;
-  color: inherit;
+  color: white;
   font-weight: bold;
   font-size: 16px;
 }
 .page {
   width: 100%;
-  margin-top: 1.5%;
+  height: fit-content;
+  background-color: #113459;
 }
 .page .first-section {
   width: 60%;
@@ -88,8 +88,11 @@ overflow-x: hidden;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background-color: #4D3EB8;
+  /* background: linear-gradient(to bottom , #113459 , #2E8DF2); */
+  background-color: #113459;
+  /* border: 1px solid rgba(255, 255, 255, 0.315); */
   border-radius: 2%;
+  height: fit-content;
 }
 .page .first-section .page-title {
   display: flex;
@@ -97,18 +100,17 @@ overflow-x: hidden;
   align-items: center;
   justify-content: center;
   height: fit-content;
-  background-color: #322978;
   position: relative;
 }
-.page .first-section .page-title::after {
+/* .page .first-section .page-title::after {
   position: absolute;
   content: "";
   width: 100%;
   height: 2px;
   bottom: -2px;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.315);
   opacity: 0.7;
-}
+} */
 .page .first-section .page-title img {
   height: 50px;
   width: 50px;
@@ -126,14 +128,15 @@ overflow-x: hidden;
   display: flex;
   flex-wrap: wrap;
   width: 50%;
-  margin-top: 3%;
+  margin-top: 1%;
   align-items: center;
   color: white;
   font-weight: bold;
   text-transform: capitalize;
-  background-color: #322978;
+  background-color: #38557370;
   padding: 3%;
   border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.315);
 }
 .page .first-section .add-emp-form label {
   width: 40%;
@@ -141,7 +144,7 @@ overflow-x: hidden;
   font-size: 16px;
 }
 .page .first-section .add-emp-form input,select {
-  background-color: #000000;
+  background-color: #14263a;
   border: 0;
   border-radius: 12px;
   padding-left: 3%;
@@ -174,4 +177,40 @@ overflow-x: hidden;
 .page .first-section .add-emp-form input[type="submit"]:hover{
   background-color: #000000;
   border: 0;
+}
+.page .second-section {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #84cfee;
+  height: fit-content;
+}
+.page .second-section .second-section-paragraph {
+  display: inline-block;
+  width: 40%;
+  margin: 0;
+  padding: 5% 0 5% 0;
+  color: white;
+  font-weight: bolder;
+  text-transform: capitalize;
+  font-size: 40px;
+  background:rgba(67, 164, 206, 0.829) ;
+}
+.page .second-section p {
+  position: relative;
+  left: 25;
+}
+.page .second-section .second-section-img {
+  align-self: flex-end;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+.page .second-section .second-section-img img {
+  width: auto;
+  max-height: 400px;
+  margin: 0;
+  padding: 0;
 }
