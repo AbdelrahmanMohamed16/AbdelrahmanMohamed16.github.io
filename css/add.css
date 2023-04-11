@@ -77,11 +77,14 @@ overflow-x: hidden;
   font-size: 16px;
 }
 .page {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: fit-content;
   background-color: #113459;
 }
 .page .first-section {
+  display: flex;
   width: 60%;
   margin: 0 20% 0 20%;
   padding-top: 2%;
@@ -93,6 +96,7 @@ overflow-x: hidden;
   /* border: 1px solid rgba(255, 255, 255, 0.315); */
   border-radius: 2%;
   height: fit-content;
+  flex: 1 1 0;
 }
 .page .first-section .page-title {
   display: flex;
@@ -186,6 +190,7 @@ overflow-x: hidden;
   align-items: center;
   background-color: #84cfee;
   height: fit-content;
+  flex: 1 1 0;
 }
 .page .second-section .second-section-paragraph {
   display: inline-block;
@@ -203,10 +208,9 @@ overflow-x: hidden;
   left: 25;
 }
 .page .second-section .second-section-img {
-  align-self: flex-end;
+  -ms-flex-order: 2;
   display: inline-block;
-  margin: 0;
-  padding: 0;
+
 }
 .page .second-section .second-section-img img {
   width: auto;
