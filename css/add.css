@@ -309,6 +309,12 @@ overflow-x: hidden;
   .header .header-content .small-page-links {
     display: flex ;
   }
+  .page .second-section {
+    margin: 0 10% 0 10%;
+  }
+  .page .second-section .add-emp-form {
+    width: 100%;
+  }
 }
 /* small screen  */
 @media (min-width: 767px) and (max-width: 921px) {
@@ -317,6 +323,12 @@ overflow-x: hidden;
   }
   .header .header-content .small-page-links {
     display: flex ;
+  }
+  .page .second-section {
+    margin: 0 10% 0 10%;
+  }
+  .page .second-section .add-emp-form {
+    width: 100%;
   }
 }
 /* medium screen  */
