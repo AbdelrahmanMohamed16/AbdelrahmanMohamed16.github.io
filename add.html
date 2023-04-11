@@ -15,77 +15,92 @@
           <div class="logo">
             <img src="images/site-logo.png" alt="logo">
             <h1 id="site-name">HR Website</h1>
-            </div>
+          </div>
             <div class="page-links">
               <ul>
                 <li><a href="index.html">home page</a></li>
                 <li><a href="search.html">search</a></li>
-                <li><a href="">add</a></li>
+                <li><a href="#">add</a></li>
                 <li><a href="update.html">Update</a></li>
                 <li><a href="submitvacation.html">submit vacation</a></li>
                 <li><a href="list_vacations.html">vacations list</a></li>
               </ul>
-        </div>
-    </div>
-    </div>
-    <div class="page">
-        <div class="first-section">
-          <div class="first-section-paragraph">
-            <p>in HR website adding employees to the system hasn't been easier ever</p>
-          </div>
-          <div class="first-section-img">
-            <img src="images/add-emp.jpg">
-          </div>
-        </div>
-        <div class="points">
-          <div class="one"></div>
-          <div class="two"></div>
-          <div class="three"></div>
-        </div>
-        <div class="second-section">
-          <div class="page-title">
-            <img src="images/user-icon.png" alt="user-icon">
-            <p id="page-name">add employee</p>
-          </div>
-          <form class="add-emp-form" method="post">
-            <label for="name-input">Name: </label>
-            <input type="text" id="name-input" placeholder="Name" autofocus="">
-            <label for="emial-input">Email: </label>
-            <input type="text" id="email-input" placeholder="Email">
-            <label for="id-input">ID: </label>
-            <input type="text" id="id-input" placeholder="ID">
-            <label for="address-input">Address: </label>
-            <input type="text" id="address-input" placeholder="Address">
-            <label for="phone-input">Phone Number: </label>
-            <input type="text" id="phone-input" placeholder="Phone">
-            <label for="approved-vacation">Approved Vacations: </label>
-            <input type="number" id="approved-vacation" placeholder="0">
-            <label for="available-vacation">Available Vacations: </label>
-            <input type="number" id="available-vacation" placeholder="0">
-            <label for="salary-input">Salary: </label>
-            <input type="number" id="salary-input" placeholder="0">
-            <label for="dob-input">Date of Birth: </label>
-            <input type="Date" id="dob-input">
-            <label>Gender:</label>
-            <div class="gender-input">
-              <label id = "male-label">
-                <input type="radio" name="os" value="Male" id="male">
-                Male</label>
-              <label id = "female-label">
-                <input type="radio" name="os" value="Female" id="female">
-                Female</label>
             </div>
-            <label for="marital-status-input">Marital Status: </label>
-            <select class="marital-status-input">
-              <option value="Single" >Single</option>
-              <option value="Married">Married</option>
-            </select>
-            <input type="submit" value="ADD" id="submit" onclick="submited()">
-          </form>
+            <div class="small-page-links">
+              <span class="symbol" onclick="open_list()">
+                <div class="symbol-part-1"></div>
+                <div class="symbol-part-2"></div>
+                <div class="symbol-part-3"></div>
+                <ul id="small-links">
+                  <li><a href="index.html">home page</a></li>
+                  <li><a href="search.html">search</a></li>
+                  <li><a href="#">add</a></li>
+                  <li><a href="update.html">Update</a></li>
+                  <li><a href="submitvacation.html">submit vacation</a></li>
+                  <li><a href="list_vacations.html">vacations list</a></li>
+                </ul>
+              </span>
+            </div>
         </div>
-        <footer></footer>
-    </div>
-    <script type="text/javascript" src="js/add.js"></script>
+      </div>
+      <div class="page">
+          <div class="first-section">
+            <div class="first-section-paragraph">
+              <p>in HR website adding employees to the system hasn't been easier ever</p>
+            </div>
+            <div class="first-section-img">
+              <img src="images/add-emp.jpg">
+            </div>
+          </div>
+          <div class="points">
+            <div class="one"></div>
+            <div class="two"></div>
+            <div class="three"></div>
+          </div>
+          <div class="second-section">
+            <div class="page-title">
+              <img src="images/user-icon.png" alt="user-icon">
+              <p id="page-name">add employee</p>
+            </div>
+            <form class="add-emp-form" method="post">
+              <label for="name-input">Name: </label>
+              <input type="text" id="name-input" placeholder="Name" autofocus="">
+              <label for="emial-input">Email: </label>
+              <input type="text" id="email-input" placeholder="Email">
+              <label for="id-input">ID: </label>
+              <input type="text" id="id-input" placeholder="ID">
+              <label for="address-input">Address: </label>
+              <input type="text" id="address-input" placeholder="Address">
+              <label for="phone-input">Phone Number: </label>
+              <input type="text" id="phone-input" placeholder="Phone">
+              <label for="approved-vacation">Approved Vacations: </label>
+              <input type="number" id="approved-vacation" placeholder="0">
+              <label for="available-vacation">Available Vacations: </label>
+              <input type="number" id="available-vacation" placeholder="0">
+              <label for="salary-input">Salary: </label>
+              <input type="number" id="salary-input" placeholder="0">
+              <label for="dob-input">Date of Birth: </label>
+              <input type="Date" id="dob-input">
+              <label>Gender:</label>
+              <div class="gender-input">
+                <label id = "male-label">
+                  <input type="radio" name="os" value="Male" id="male">
+                  Male</label>
+                <label id = "female-label">
+                  <input type="radio" name="os" value="Female" id="female">
+                  Female</label>
+              </div>
+              <label for="marital-status-input">Marital Status: </label>
+              <select class="marital-status-input">
+                <option value="Single" >Single</option>
+                <option value="Married">Married</option>
+              </select>
+              <input type="submit" value="ADD" id="submit" onclick="submited()">
+            </form>
+          </div>
+          <footer></footer>
+      </div>
+      <script type="text/javascript" src="js/add.js"></script>
   </body>
 </html>
 <!-- Credit-->

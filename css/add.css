@@ -35,13 +35,15 @@ overflow-x: hidden;
   min-width: 140px;
   color: white;
 }
-.header .header-content .page-links{
+.header .header-content .page-links {
+  display: flex;
   width: 60%;
   /* background-color: #322978; */
   padding: 0 2% 0 2%;
   border-radius: 40px;
 }
 .header .header-content .page-links ul {
+  width: 100%;
   list-style: none;
   display: flex;
   justify-content: space-around;
@@ -79,6 +81,50 @@ overflow-x: hidden;
   font-weight: bold;
   font-size: 16px;
 }
+.header .header-content .small-page-links {
+  width: fit-content;
+  display: none;
+  align-items: center;
+}
+.header .header-content .small-page-links .symbol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: fit-content;
+} 
+.header .header-content .small-page-links .symbol .symbol-part-1,.symbol-part-2,.symbol-part-3 {
+  width: 25px;
+  height: 2px;
+  background-color: whitesmoke;
+  margin-top: 5px;
+}
+.header .header-content .small-page-links .symbol .symbol-part-2 {
+  width: 20px;
+}
+.header .header-content .small-page-links .symbol ul {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  padding: 3%;
+  position: absolute;
+  right: 0%;
+  top: 6%;
+  list-style: none;
+  background-color: #113459;
+  border-radius: 0 0 12px 12px;
+  box-shadow: -1px 1px 3px;
+}
+.header .header-content .small-page-links .symbol ul li {
+  margin-top: 2%;
+}
+.header .header-content .small-page-links .symbol ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
 .page {
   display: flex;
   flex-direction: column;
@@ -257,9 +303,21 @@ overflow-x: hidden;
 }
 /* mobile screen */
 @media (max-width: 767px) {
+  .header .header-content .page-links {
+    display: none;
+  }
+  .header .header-content .small-page-links {
+    display: flex ;
+  }
 }
 /* small screen  */
 @media (min-width: 767px) and (max-width: 921px) {
+  .header .header-content .page-links {
+    display: none;
+  }
+  .header .header-content .small-page-links {
+    display: flex ;
+  }
 }
 /* medium screen  */
 @media (min-width: 922px) and (max-width: 1199px) {
