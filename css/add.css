@@ -7,9 +7,7 @@ overflow-x: hidden;
   background-color: #113459;
   color: white;
   letter-spacing: 1px;
-  -ms-flex-order: 1;
   border-bottom: 1px solid rgba(245, 245, 245, 0.664);
-
 }
 .header .header-content {
   width: 95%;
@@ -74,6 +72,13 @@ overflow-x: hidden;
   bottom: -2;
   right: 0%;
 }
+.header .header-content .page-links ul .active::after{
+  width: 100%;
+  height: 2px;
+  background-color: whitesmoke;
+  bottom: -2;
+  right: 0%;
+}
 .header .header-content .page-links a {
   text-transform: capitalize;
   text-decoration: none;
@@ -102,7 +107,7 @@ overflow-x: hidden;
   width: 20px;
 }
 .header .header-content .small-page-links .symbol ul {
-  display: none;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   margin: 0;
@@ -114,6 +119,7 @@ overflow-x: hidden;
   background-color: #113459;
   border-radius: 0 0 12px 12px;
   box-shadow: -1px 1px 3px;
+  z-index: 1;
 }
 .header .header-content .small-page-links .symbol ul li {
   margin-top: 2%;
@@ -131,7 +137,6 @@ overflow-x: hidden;
   width: 100%;
   height: fit-content;
   background-color: #113459;
-  -ms-flex-order: 2;
 }
 .page .first-section {
   width: 100%;
@@ -154,6 +159,11 @@ overflow-x: hidden;
   text-transform: capitalize;
   font-size: 40px;
   background:rgba(67, 164, 206, 0.829) ;
+  transform: translateX(-1000%);
+  animation-name: enter-Window;
+  animation-duration: 1.7s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
 }
 .page .first-section p {
   border-bottom: 1px solid rgba(245, 245, 245, 0.664);
@@ -161,6 +171,16 @@ overflow-x: hidden;
 .page .first-section .first-section-img {
   display: inline-block;
   width: 100%;
+  transform: translateX(1000%); 
+  animation-name: enter-Window;
+  animation-duration: 1.8s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+@keyframes enter-Window {
+  to {
+    transform: translateX(0);
+  }
 }
 .page .first-section .first-section-img img {
   width: 100%;
@@ -268,10 +288,10 @@ overflow-x: hidden;
   font-size: 16px;
   width: 60%;
 }
-.page .second-section .add-emp-form input[type="radio"]{
+.page .second-section .add-emp-form input[type="radio"] {
   width: fit-content;
   padding: 0;
-  margin: 0;
+  margin: 0; 
 }
 .page .second-section .add-emp-form .gender-input {
   display: flex;
@@ -322,7 +342,7 @@ overflow-x: hidden;
     display: none;
   }
   .header .header-content .small-page-links {
-    display: flex ;
+    display: flex;
   }
   .page .second-section {
     margin: 0 10% 0 10%;
