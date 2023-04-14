@@ -16,7 +16,7 @@ userName.onblur = function (){
   } 
 }
 userID.onblur = function (){
-  if(userID.value != "" && userID.value.length <= 14){
+  if(userID.value != "" && userID.value.match("[0-9]") &&  userID.value.length <= 14){
     userID.removeAttribute("style");
   } 
 }
@@ -60,42 +60,42 @@ document.forms[0].onsubmit = function (ele){
       validAvailableVacations = false,
       validSalary = false,
       validDob = true;
-      if (userName.value != "" && userName.value.length > 2){
-        validName = (userName.value.match("[A-Za-z]"))? true : false; 
+      if (userName.value != "" && userName.value.length > 2 && userName.value.match("[A-Za-z]+")){
+        validName = true; 
       }else {
         userName.style.cssText = "border: 1px solid red;";
       }
-      if (userID.value != "" && userID.value.length <= 14){
+      if (userID.value != "" && userID.value.match("[0-9]") &&  userID.value.length <= 14){
         validID = true;
       } else {
         userID.style.cssText = "border: 1px solid red;";
       }
-      if (userEmail.value != "" && userEmail.value.match("[A-Za-z]+[0-9]*[@][A-Za-z]+[.][A-Za-z]+")){
+      if (userEmail.value.match("[A-Za-z]+[0-9]*[@][A-Za-z]+[.][A-Za-z]+")){
         validEmail = true;
       }else {
         userEmail.style.cssText = "border: 1px solid red;";
       }
-      if (userAddress.value != ""){
+      if (userAddress.value != "" && userAddress.value.length > 8 ){
         validAddress = true;
       }else {
         userAddress.style.cssText = "border: 1px solid red;";
       }
-      if (userPhoneNumber.value != "" && userPhoneNumber.value.length <= 15){
+      if (userPhoneNumber.value != "" && userPhoneNumber.value.match("[0-9]+") && userPhoneNumber.value.length <= 15){
         validPhone = true;
       }else {
         userPhoneNumber.style.cssText = "border: 1px solid red;";
       }
-      if (userApprovedVacations != "" && userApprovedVacations.value > 0){
+      if (userApprovedVacations.value != "" && userApprovedVacations.value.match("[0-9]+") && userApprovedVacations.value > 0){
         validApprovedVacations = true;
       }else {
         userApprovedVacations.style.cssText = "border: 1px solid red;";
       }
-      if (userAvailableVacations != "" && userAvailableVacations.value > 0){
+      if (userAvailableVacations.value != "" && userAvailableVacations.value.match("[0-9]+") && userAvailableVacations.value > 0){
         validAvailableVacations = true;
       }else {
         userAvailableVacations.style.cssText = "border: 1px solid red;";
       }
-      if (userSalary != "" && userSalary.value > 2000){
+      if (userSalary.value.match("[0-9]+") && userSalary.value > 2000){
         validSalary = true;
       }else {
         userSalary.style.cssText = "border: 1px solid red;";
