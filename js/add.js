@@ -1,3 +1,28 @@
+let header = document.querySelector(".header");
+header.innerHTML = `
+  <div class="header-content">
+  <div class="logo">
+    <img src="images/site-logo.png" alt="logo">
+    <h1 id="site-name">HR Website</h1>
+  </div>
+    <div class="page-links">
+      <ul>
+        <li><a href="index.html">home page</a></li>
+        <li><a href="search.html">search</a></li>
+        <li><a href="#">add</a></li>
+        <li><a href="update.html">Update</a></li>
+        <li><a href="submitvacation.html">submit vacation</a></li>
+        <li><a href="list_vacations.html">vacations list</a></li>
+      </ul>
+    </div>
+    <div class="small-page-links">
+      <span class="symbol">
+        <div class="symbol-part-1"></div>
+        <div class="symbol-part-2"></div>
+        <div class="symbol-part-3"></div>
+      </span>
+    </div>
+</div>`;
 let userName = document.forms[0].querySelector('#name-input');
 let userEmail = document.forms[0].querySelector('#email-input');
 let userID = document.forms[0].querySelector('#id-input');
