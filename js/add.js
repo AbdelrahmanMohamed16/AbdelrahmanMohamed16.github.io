@@ -23,6 +23,41 @@ header.innerHTML = `
       </span>
     </div>
 </div>`;
+let footer = document.querySelector("footer");
+footer.innerHTML= `<div class="footer-content">
+<div class="logo">
+  <img src="images/site-logo.png" alt="logo">
+  <h1 id="site-name">HR Website</h1>
+</div>
+<div class="footer-section">
+  <div class="footer-list">
+      <ol>
+        <h2>who are us ?</h2>
+        <li>abdelrahman mohamed</li>
+        <li>mohamed fathi</li>
+        <li>mostafa elsawy</li>
+        <li>moaz adly</li>
+        <li>mohamed mahmoud</li>
+      </ol>
+  </div>
+</div>
+<div class="footer-section">
+  <div class="footer-list">
+      <ul>
+        <h2>what's that ?</h2>
+        <li>this is a humen resources managment website which aiming to make the jop of HRS more eaiser than it ever been </li>
+      </ul>
+  </div>
+</div>
+<div class="footer-section">
+  <div class="footer-list">
+      <ul>
+        <h2>this phoject is :</h2>
+        <li>from FCAI students for web technology course, supervises DR.Nemat Al tazi </li>
+      </ul>
+  </div>
+</div>
+</div>`;
 let userName = document.forms[0].querySelector('#name-input');
 let userEmail = document.forms[0].querySelector('#email-input');
 let userID = document.forms[0].querySelector('#id-input');
