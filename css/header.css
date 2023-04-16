@@ -22,7 +22,7 @@
 .header .header-content .logo #site-name{
   display: inline-block;
   margin: 0;
-  padding-left: 4%;
+  padding-left: 12px;
   font-size: 25px;
   font-weight: bold;
   min-width: 140px;

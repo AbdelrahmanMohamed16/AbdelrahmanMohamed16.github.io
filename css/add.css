@@ -135,6 +135,58 @@ body {
   text-transform: capitalize;
 }
 
+.message {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  background-color: #0D2742;
+  border: 1px solid rgba(245, 245, 245, 0.342);
+  border-radius: 15px;
+  height: fit-content;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+}
+
+.message .message-container {
+  width: calc(100%-30px);
+  display: flex;
+  border: 1px solid rgba(245, 245, 245, 0.158);
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  margin: 20px;
+  background-color: #113459;
+  border-radius: 15px;
+}
+
+.message .message-container p {
+  text-align: center;
+  font-size: 16px;
+  color: white;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.message .message-container button {
+  text-align: center;
+  width: 200px;
+  padding: 5px;
+  color: white;
+  border: 1px solid rgba(245, 245, 245, 0.664);
+  background-color: #0D2742;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 18px;
+}
+.message .message-container button:hover {
+  color: #25b8f7;
+}
+
 .page {
   display: flex;
   flex-direction: column;
@@ -220,6 +272,7 @@ body {
 }
 .page .second-section {
   display: flex;
+  position: relative;
   width: fit-content;
   margin: 0 20% 0 20%;
   padding-top: 2%;

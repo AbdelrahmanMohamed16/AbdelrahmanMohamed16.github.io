@@ -58,6 +58,32 @@ footer.innerHTML= `<div class="footer-content">
   </div>
 </div>
 </div>`;
+class message {
+  constructor(t = "", b = "", n = "") {
+    this.name = n;
+    this.text = t;
+    this.buttonText = b;
+    this.messageStructure = `
+      <div class="message-container">
+        <p>${this.text}</p>
+        <button onclick="close_message(this.parentNode.parentNode)">${this.buttonText}</button>
+      </div>
+    `;
+  }
+  displayMessage() {
+    let d = document.createElement('div');
+    d.className = "message";
+    d.setAttribute("id",this.name)
+    d.innerHTML = this.messageStructure;
+    document.forms[0].after(d);
+    // document.write(this.messageStructure);
+  }
+};
+let section = document.querySelector('.second-section');
+let close_message = function (object) {
+  object.remove();
+}
+let formErrorMessage = new message("invalid data, please insure that you inserted correct data.","ok","form-error");
 let userName = document.forms[0].querySelector('#name-input');
 let userEmail = document.forms[0].querySelector('#email-input');
 let userID = document.forms[0].querySelector('#id-input');
@@ -70,6 +96,7 @@ let userDateofBirth = document.forms[0].querySelector('#dob-input');
 let userGender = document.forms[0].querySelector('input[name="os"]:checked');
 let userMartialStatues = document.forms[0].querySelector('#martial-status-input');
 let lastID = localStorage.getItem("lastID") || 1;
+let message_button = document.forms[0].querySelector("#close-message");
 userName.onblur = function (){
   if(userName.value != "" && userName.value.length > 2 && userName.value.match("[A-Za-z]+")){
     userName.removeAttribute("style");
@@ -164,6 +191,7 @@ document.forms[0].onsubmit = function (ele){
         validPhone === false  || validApprovedVacations === false  || validAvailableVacations === false 
       || validSalary === false  || validDob === false ){
         ele.preventDefault();
+        formErrorMessage.displayMessage();
       }
       else{
         localStorage.setItem(`userName ${lastID}`,userName.value);

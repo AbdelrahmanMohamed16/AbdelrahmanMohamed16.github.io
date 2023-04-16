@@ -23,7 +23,7 @@ footer .footer-content .logo {
     width: 100%;
     display: flex;
     align-items: center;
-    padding: 5% 0 0 5%;
+    padding: 40px 0 0 5%;
 }
 
 footer .footer-content .logo img{
@@ -34,7 +34,7 @@ footer .footer-content .logo img{
 footer .footer-content  .logo #site-name{
     display: inline-block;
     margin: 0;
-    padding-left: 4%;
+    padding-left: 12px;
     font-size: 25px;
     font-weight: bold;
     min-width: 140px;
