@@ -58,6 +58,7 @@ footer.innerHTML= `<div class="footer-content">
   </div>
 </div>
 </div>`;
+
 class message {
   constructor(t = "", b = "", n = "") {
     this.name = n;
@@ -209,6 +210,7 @@ document.forms[0].onsubmit = function (ele){
         localStorage.setItem(`lastID`,lastID);
       }
 };
+
 let clicked = false;
 function open_list() {
   if (!clicked){
