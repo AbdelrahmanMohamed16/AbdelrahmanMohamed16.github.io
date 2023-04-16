@@ -1,70 +1,37 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>submit Vacation</title>
-    </head>
-    <body>
-        <div class="">
-
-
-          <div class="">
-
-            <img src="images/site-logo.png" alt="logo" height="50" width="50">
-          </div>
-
-          <div class="">
-            <h1>HR Website</h1>
-          </div>
-
-          <div class="" style="">
-
-            <ul>
-              <li><a href="index.html">home page</a></li>
-              <li><a href="search.html">Search</a></li>
-              <li><a href="add.html">Add</a></li>
-              <li><a href="update.html">Update</a></li>
-              <li><a href="">Submit vacation</a></li>
-              <li><a href="list_vacations.html">vacations list</a></li>
-            </ul>
-
-          </div>
-
-
+<html lang="en" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/submitvacation.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+  </head>
+  <body>
+    <div class="header">
+    </div>
+    <div class="page">
+      <div class="second-section">
+        <div class="page-title">
+          <img src="images/submitvacation-user.png" alt="">
+          <h2 id="page-name">submit a vacation form</h2>
         </div>
-
-        <hr>
-
-
-
-
-        <div>
-            <h2>submit a vacation form</h2>
-        </div>
-        <form >
-          <div>
-            <label for="I">ID</label>
-            <input id="I" type="text" autofocus placeholder="Emplyee ID" required>
-          </div>
-          <br>
-          <div>
-            <label for="F">From</label>
-            <input  id="F"  type="date" placeholder="DD/MM/YYYY" required>
-          </div>
-          <br>
-          <div>
-            <label for="T">To</label>
-            <input type="date" id="T" placeholder="DD/MM/YYYY" required>
-          </div>
-          <div>
-            <h3>The reason for apply</h3>
-          </div>
-          <div>
-             <textarea cols="30" rows="10" placeholder="enter reason"></textarea>
-          </div>
-          <br>
-          <div>
-            <input type="submit">
-          </div>
+        <form class="submit-vacation-form" action = "">
+          <label for="input-id">ID:</label>
+          <input id="input-id" type="text" autofocus placeholder="Emplyee ID">
+          <label for="input-from-data">From:</label>
+          <input  id="input-from-data"  type="date" placeholder="DD/MM/YYYY">
+          <label for="input-to-data">To:</label>
+          <input id="input-to-data" type="date" placeholder="DD/MM/YYYY">
+          <h3>The reason for apply:</h3>
+          <textarea cols="30" rows="10" placeholder="enter reason" id="input-reason"></textarea>
+          <input type="submit" id="submit-button">
         </form>
-    </body>
+    </div>
+    <footer></footer>
+    <script src="js/submitvacation.js"></script>
+  </body>
 </html>
