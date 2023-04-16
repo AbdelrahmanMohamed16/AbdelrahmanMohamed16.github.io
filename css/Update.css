@@ -1,6 +1,6 @@
 html {
-  overflow-x: hidden;
-  overflow-y: scroll;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 body {
   font-family: 'Cairo', sans-serif;
@@ -118,14 +118,13 @@ body {
 .page .points {
   display: flex;
   justify-content: center;
-  margin-top: 25px;
 }
 .page .points .one,.two,.three {
   width: 20px;
   height: 20px;
   background-color: white;
-  margin: 2% 10px 0 0;
-  border-radius: 100%;
+  margin: 5% 10px 0 0;
+  border-radius: 30%;
   animation-name: points-animation;
   animation-duration: 0.9s;
   animation-direction: alternate;
@@ -143,6 +142,7 @@ body {
     transform: translateY(-20px) ;
   }
 }
+
 .page .second-section {
   display: flex;
   position: relative;
@@ -159,6 +159,7 @@ body {
   height: fit-content;
   flex: 1 1 0;
 }
+
 .page .second-section .page-title {
   display: flex;
   width: 100%;

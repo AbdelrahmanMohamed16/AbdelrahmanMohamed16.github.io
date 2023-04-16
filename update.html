@@ -1,116 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- saved from url=(0088)file:///E:/Study/Second%20Year/Second%20Year_SecondSemester/Web/Web_Project/Add_emp.html -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="style.css"> -->
-    <title>Updating page</title>
-</head>
-<body>
-
-  <div class="">
-
-
-    <div class="">
-
-      <img src="images/site-logo.png" alt="logo" height="50" width="50">
-    </div>
-
-    <div class="">
-      <h1>HR Website</h1>
-    </div>
-
-    <div class="" style="">
-
-      <ul>
-        <li><a href="index.html">home page</a></li>
-        <li><a href="search.html">Search</a></li>
-        <li><a href="add.html">Add</a></li>
-        <li><a href="">Update</a></li>
-        <li><a href="submitvacation.html">Submit vacation</a></li>
-        <li><a href="list_vacations.html">vacations list</a></li>
-      </ul>
-
-    </div>
-
-
-  </div>
-
-
-    <br>
-    <h3>Updating new employee</h3>
-    <form>
-    <div class="registrations">
-        <div class="registrations1">
-        <div>
-            <input type="text" required placeholder="Saved name">
-        </div>
-        <div>
-            <input type="email" required placeholder="Saved Email">
-        </div>
-        <div>
-            <input type="text" required placeholder="Saved ID">
-        </div>
-        <div>
-            <input type="text" required placeholder="Saved Address">
-        </div>
-        <div>
-            <input type="text" required placeholder="Saved phone number">
-        </div>
-        </div>
-        <div class ="registrations2">
-            <div>
-                <input type="number" required placeholder="Actual approved vacation days">
+    <title>Update page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/Update.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    </head>
+    <body>
+      <div class="header">
+      </div>
+      <div class="page">
+          <div class="points">
+            <div class="one"></div>
+            <div class="two"></div>
+            <div class="three"></div>
+          </div>
+          <div class="second-section">
+            <div class="page-title">
+              <img src="images/user-icon.png" alt="user-icon">
+              <p id="page-name">Update new employee</p>
             </div>
-            <div>
-                <input type="number" required placeholder="Num of avilable vacation's">
-            </div>
-            <div>
-                <input type="number" required placeholder="Saved salary">
-            </div>
-            <div>
-                <label>Date Of Birth</label>
-                <input type="date">
-            </div>
-        </div>
-    </div>
-    <div class ="choice">
-        <div>
-            <label>Gender:</label>
-            <input type="radio" name="os" value="Male">
-            <label>Male</label>
-            <input type="radio" name="os" value="Female">
-            <label>Female</label>
-        </div>
-        <!-- <div>
-            <input type="radio" name="os" value="Female">
-            <label>Female</label>
-
-        </div> -->
-        </div>
-        <div class="status">
-            <div>
-                <label>marital status:</label>
-                <input type="radio" name="os" value="Marrige">
-                <label>Marrige</label>
-                <input type="radio" name="os" value="Single">
-                <label>Single</label>
-            </div>
-            <!-- <div>
-                <input type="radio" name="os" value="Single">
-                <label>Single</label>
-            </div> -->
-        </div>
-    <div class="buttons">
-        <div>
-            <input type="submit" value="Update">
-        </div>
-        <div>
-            <input type="reset"value="Delete">
-        </div>
-    </div>
-
-    </form>
-</body>
+            <form class="add-emp-form"action = "">
+              <label for="name-input">Name: </label>
+              <input type="text" id="name-input" placeholder="Name">
+              <label for="email-input">Email: </label>
+              <input type="text" id="email-input" placeholder="Email">
+              <label for="id-input">ID: </label>
+              <input type="text" id="id-input" placeholder="ID">
+              <label for="address-input">Address: </label>
+              <input type="text" id="address-input" placeholder="Address">
+              <label for="phone-input">Phone Number: </label>
+              <input type="text" id="phone-input" placeholder="Phone">
+              <label for="approved-vacation">Approved Vacations: </label>
+              <input type="text" id="approved-vacation" placeholder="0">
+              <label for="available-vacation">Available Vacations: </label>
+              <input type="text" id="available-vacation" placeholder="0">
+              <label for="salary-input">Salary: </label>
+              <input type="text" id="salary-input" placeholder="0">
+              <label for="dob-input">Date of Birth: </label>
+              <input type="Date" id="dob-input">
+              <label>Gender:</label>
+              <div class="gender-input">
+                <label id = "male-label">
+                  <input type="radio" name="os" value="Male" id="male" checked>
+                  Male</label>
+                <label id = "female-label">
+                  <input type="radio" name="os" value="Female" id="female">
+                  Female</label>
+              </div>
+              <label for="martial-status-input">Martial Status: </label>
+              <select class="martial-status-input" id="martial-status-input">
+                <option value="Single" >Single</option>
+                <option value="Married">Married</option>
+              </select>
+              <input type="submit" value="Update" id="submit">
+            </form>
+          </div>
+          <footer></footer>
+      </div>
+      <footer></footer>
+      <script type="text/javascript" src="js/Update.js"></script>
+  </body>
 </html>
+<!-- Credit-->
