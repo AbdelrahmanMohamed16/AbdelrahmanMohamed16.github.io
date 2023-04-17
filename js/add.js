@@ -7,7 +7,7 @@ header.innerHTML = `
   </div>
     <div class="page-links">
       <ul>
-        <li><a href="index.html">home page</a></li>
+        <li><a href="index.html">home</a></li>
         <li><a href="search.html">search</a></li>
         <li><a href="#">add</a></li>
         <li><a href="update.html">Update</a></li>
@@ -244,7 +244,7 @@ list.setAttribute('id','small-links');
 let li1 = document.createElement('li');
 let link1 = document.createElement('a');
 link1.setAttribute('href','index.html');
-link1.append("home page");
+link1.append("home");
 li1.append(link1);
 list.append(li1);
 let li2 = document.createElement('li');
@@ -287,13 +287,3 @@ list_symbol.onclick = function (){
     list_opend = false;
   }
 };
-// `
-//   <ul id="small-links">
-//     <li><a href="index.html">home page</a></li>
-//     <li><a href="search.html">search</a></li>
-//     <li><a href="#">add</a></li>
-//     <li><a href="update.html">Update</a></li>
-//     <li><a href="submitvacation.html">submit vacation</a></li>
-//     <li><a href="list_vacations.html">vacations list</a></li>
-//   </ul>
-// `

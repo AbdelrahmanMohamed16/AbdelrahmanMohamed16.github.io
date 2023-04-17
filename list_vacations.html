@@ -1,102 +1,17 @@
-<!DOCTYPE html>
 <html lang="en" dir="ltr">
-
-
-
-
-<head>
-  <meta charset="utf-8">
-  <meta name="description" content="here we manage all humen resources of your company">
-  <title>list vacations</title>
-</head>
-
-
-
-
-<body>
-
-<div class="">
-
-
-  <div class="">
-    <img src="images/site-logo.png" alt="logo" height="50"  width="50" >
-  </div>
-
-  <div class="">
-    <h1>HR Website</h1>
-  </div>
-
-  <div class="" style="">
-
-    <ul>
-      <li><a href="index.html">home page</a></li>
-      <li><a href="search.html">Search</a></li>
-      <li><a href="add.html">Add</a></li>
-      <li><a href="update.html">Update</a></li>
-      <li><a href="submitvacation.html">Submit vacation</a></li>
-      <li><a href="">vacations list</a></li>
-    </ul>
-
-  </div>
-
-
-</div>
-
-
-
-<div class="">
-  <h2>list of vacations forms</h2>
-</div>
-<br>
-<br>
-
-
-
-<div class="vacation" >
-    <p><b>Name</b></p>
-    <p><b>Employee Id</b></p>
-
-    <p>Reason</p>
-
-    <label for="from"> From </label>
-    <input type="date" name="begin"
-    placeholder="dd-mm-yyyy" value="2025-12-31"
-    min="1997-01-01" max="2030-12-31" disabled class="from">
-    <br>
-    <label for="to"> To </label>
-    <input type="date" name="begin"
-    placeholder="dd-mm-yyyy" value="2025-12-31"
-    min="1997-01-01" max="2030-12-31" disabled class="to">
-    <br>
-     <button type="button" name="button">Accept</button>
-     <button type="button" name="button">Reject</button>
-
-     <hr>
-  </div>
-
-
-
-
-
-  <div class="vacation" >
-      <p><b>Name</b></p>
-      <p><b>Employee Id</b></p>
-
-      <p>Reason</p>
-
-      <label for="from"> From </label>
-      <input type="date" name="begin"
-      placeholder="dd-mm-yyyy" value="2025-12-31"
-      min="1997-01-01" max="2030-12-31" disabled class="from">
-      <br>
-      <label for="to"> To </label>
-      <input type="date" name="begin"
-      placeholder="dd-mm-yyyy" value="2025-12-31"
-      min="1997-01-01" max="2030-12-31" disabled class="to">
-      <br>
-       <button type="button" name="button">Accept</button>
-       <button type="button" name="button">Reject</button>
-
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vacations List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/list_vacations.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+  </head>
+  <body>
+    <div class="header">
     </div>
 
 
@@ -104,11 +19,92 @@
 
 
 
+<div class="">
+  <h2>list of vacations forms</h2>
+</div>
+
+
+<br>
+
+
+
+<div class="vacations" >
+  <div class="card">
+
+    <div class="sub-flex">
+      <p><b>Name</b></p>
+      <p>Reason</p>
+        <p><b>Employee Id</b></p>
+    </div>
+      
+  
+      
+  
+      <div class="sub-flex">
+        <div class="sub-flex-row">
+          <label for="from"> From </label>
+          <input type="date" name="begin" placeholder="dd-mm-yyyy" value="2025-12-31" min="1997-01-01" max="2030-12-31" disabled class="from">
+        </div>
+        
+      
+        <div class="sub-flex-row">
+          <label for="to"> To </label>
+          <input type="date" name="begin"
+          placeholder="dd-mm-yyyy" value="2025-12-31"
+          min="1997-01-01" max="2030-12-31" disabled class="from">
+        </div>
+     </div>
+     
+     <div class="sub-flex">
+      <button type="button" name="button" class="accept">Accept</button>
+      <button type="button" name="button" class="reject">Reject</button>
+     </div>
+  </div>
+     
+  <div class="card">
+
+    <div class="sub-flex">
+      <p><b>Name</b></p>
+      <p>Reason</p>
+      <p><b>Employee Id</b></p>
+    </div>
+      
+  
+      
+  
+      <div class="sub-flex">
+        <div class="sub-flex-row">
+          <label for="from"> From </label>
+          <input type="date" name="begin"
+          placeholder="dd-mm-yyyy" value="2025-12-31"
+          min="1997-01-01" max="2030-12-31" disabled class="from">
+        </div>
+        
+      
+        <div class="sub-flex-row">
+          <label for="to"> To </label>
+          <input type="date" name="begin"
+          placeholder="dd-mm-yyyy" value="2025-12-31"
+          min="1997-01-01" max="2030-12-31" disabled class="from">
+        </div>
+     </div>
+     
+     <div class="sub-flex">
+      <button type="button" name="button" class="accept">Accept</button>
+      <button type="button" name="button" class="reject">Reject</button>
+     </div>
+  </div>
+
+     
+  </div>
+  <footer></footer>
+  <script src="js/listvacation.js"></script>
+
+
+
   </body>
 
 
-
-</body>
 
 
 

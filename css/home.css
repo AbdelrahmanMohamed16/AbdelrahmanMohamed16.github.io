@@ -6,6 +6,7 @@ body {
     font-family: 'Cairo', sans-serif;
     margin: 0;
     overflow-x: hidden;
+    background-color: #026d9b;
 }
 .page {
     display: flex;
@@ -14,13 +15,11 @@ body {
 
 .first-section {
     color:white ;
-    background-color: white;
     text-align: center;
     display: flex;
     flex-direction: column;
     font-weight: bold;
-    background-color: #84CFEE;
-    border-bottom: 1px solid rgba(245, 245, 245, 0.664);
+    /* border-bottom: 1px solid rgba(245, 245, 245, 0.664); */
 }
 .first-section img {
     width: 100%;
@@ -30,8 +29,6 @@ body {
 }
 
 .page .second-section {
-    background-color: #84CFEE;
-    border-bottom: 1px solid rgba(245, 245, 245, 0.664);
 }
 
 .page .use-section {

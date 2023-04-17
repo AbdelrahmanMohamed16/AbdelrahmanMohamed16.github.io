@@ -2,7 +2,7 @@
     background-color: #113459;
     color: white;
     letter-spacing: 1px;
-    border-bottom: 1px solid rgba(245, 245, 245, 0.664);
+    /* border-bottom: 1px solid rgba(245, 245, 245, 0.664); */
   }
 .header .header-content {
   width: 95%;

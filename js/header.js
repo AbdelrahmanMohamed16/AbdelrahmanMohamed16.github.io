@@ -16,7 +16,7 @@ list.setAttribute('id','small-links');
 let li1 = document.createElement('li');
 let link1 = document.createElement('a');
 link1.setAttribute('href','index.html');
-link1.append("home page");
+link1.append("home");
 li1.append(link1);
 list.append(li1);
 let li2 = document.createElement('li');
