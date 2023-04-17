@@ -148,26 +148,55 @@ let close_message = function (object) {
 let formErrorMessage = new message("invalid data, please insure that you inserted correct data.","ok","form-error");
 let userID = document.forms[0].querySelector(`#input-id`);
 let vacationReason = document.forms[0].querySelector(`#input-reason`);
-let vacationFromDate = document.forms[0].querySelector(`input-from-data`);
-let vacationToDate = document.forms[0].querySelector(`input-to-data`);
-let vacationID = localStorage.getItem("vacationID") || 1;
+let vacationFromDate = document.forms[0].querySelector(`#input-from-data`);
+let vacationToDate = document.forms[0].querySelector(`#input-to-data`);
+let vacationID = localStorage.getItem("vacations") || 1;
 userID.onblur = function (){
   if(userID.value != "" && userID.value.match("[0-9]") &&  userID.value.length <= 14){
     userID.removeAttribute("style");
   } 
 }
+userExist = function(e){
+  let lastID = localStorage.getItem("lastID");
+  for(let i = 1; i < lastID; i++){
+    let name = localStorage.getItem(`userID ${i}`);
+    console.log(name);
+    if (e == name){
+      return true;
+    }
+  }
+  return false;
+}
 document.forms[0].onsubmit = function (ele){
-  let validID = false;
-      if (userID.value != "" && userID.value.match("[0-9]") &&  userID.value.length <= 14){
+  let toDate = vacationToDate.value;
+  let fromDate = vacationFromDate.value;
+  toDateArray = toDate.split('-');
+  fromDateArray = fromDate.split('-');
+  let validID = false,
+      validDates = false;
+      if (userID.value != "" && userID.value.match("[0-9]") &&  userID.value.length <= 14 && userExist(userID.value)){
         validID = true;
       }
       else {
         userID.style.cssText = "border: 1px solid red;";
       }
-      if (validID === false){
+      if (toDateArray[0] >= fromDateArray[0] && toDateArray[1] >= fromDateArray[1] && toDateArray[2] > fromDateArray[2]){
+        validDates = true;
+      }
+      else {
+        vacationToDate.style.cssText = "border: 1px solid red;";
+        vacationFromDate.style.cssText = "border: 1px solid red;";
+      }
+      if (validID === false || validDates === false){
         ele.preventDefault();
         formErrorMessage.displayMessage();
       }
-      else{
+      else {
+        localStorage.setItem(`vacationUserID ${vacationID}`,userID.value);
+        localStorage.setItem(`vacationToDate ${vacationID}`,toDate);
+        localStorage.setItem(`vacationFromDate ${vacationID}`,fromDate);
+        localStorage.setItem(`vacationReason ${vacationID}`,vacationReason.value);
+        vacationID++;
+        localStorage.setItem(`vacations`,vacationID);
       }
 };

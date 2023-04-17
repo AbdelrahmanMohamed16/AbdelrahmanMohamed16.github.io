@@ -128,7 +128,7 @@ class card {
     this.name = n;
     this.id = id;
     this.cardStructure = `
-    <img src="images\\pic${getRandomInt(3)}.jpg" alt="" class = "image">
+    <img src="images\\pic${getRandomInt(3) == 0?1:getRandomInt(3)}.jpg" alt="" class = "image">
     <div class="text">
       <p>
         name: ${this.name}
