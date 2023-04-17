@@ -119,3 +119,7 @@ list_symbol.onclick = function (){
     list_opend = false;
   }
 };
+let last_ID = localStorage.getItem('lastID');
+for (let i = 1; i < last_ID; i++){
+  
+}

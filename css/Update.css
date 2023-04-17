@@ -115,33 +115,6 @@ body {
   margin: 0;
   padding: 0;
 }
-.page .points {
-  display: flex;
-  justify-content: center;
-}
-.page .points .one,.two,.three {
-  width: 20px;
-  height: 20px;
-  background-color: white;
-  margin: 5% 10px 0 0;
-  border-radius: 30%;
-  animation-name: points-animation;
-  animation-duration: 0.9s;
-  animation-direction: alternate;
-  animation-iteration-count: infinite;
-}
-.page .points .two {
-  animation-delay: 0.3s;
-}
-.page .points .three {
-  animation-delay: 0.6s;
-}
-@keyframes points-animation {
-  to{
-    opacity: 0.3;
-    transform: translateY(-20px) ;
-  }
-}
 
 .page .second-section {
   display: flex;
@@ -241,9 +214,9 @@ body {
   color: white;
   font-size: 16px;
   font-weight: bold;
-  width: 60%;
+  width: 35%;
   min-height: 37px;
-  margin: 10% 0 0 20%;
+  margin: 60px auto 0 auto;
   cursor: pointer;
 }
 .page .second-section .add-emp-form input[type="submit"]:hover{

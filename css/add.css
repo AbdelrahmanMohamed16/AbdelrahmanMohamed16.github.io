@@ -240,9 +240,9 @@ body {
   color: white;
   font-size: 16px;
   font-weight: bold;
-  width: 60%;
+  width: 35%;
   min-height: 37px;
-  margin: 10% 0 0 20%;
+  margin: 60px auto 0 auto;
   cursor: pointer;
 }
 .page .second-section .add-emp-form input[type="submit"]:hover{
