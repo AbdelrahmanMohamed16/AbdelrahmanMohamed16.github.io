@@ -84,17 +84,14 @@ class message {
 let close_message = function (object) {
   object.remove();
 }
+let userNotFound = new message("user not found, ensure you iserted correct name","CLOSE","update-error");
 let formErrorMessage = new message("invalid data, please insure that you inserted correct data.","ok","form-error");
 let userName = document.forms[0].querySelector('#name-input');
 let userEmail = document.forms[0].querySelector('#email-input');
-let userID = document.forms[0].querySelector('#id-input');
 let userAddress = document.forms[0].querySelector('#address-input');
 let userPhoneNumber = document.forms[0].querySelector('#phone-input');
-let userApprovedVacations = document.forms[0].querySelector('#approved-vacation');
-let userAvailableVacations = document.forms[0].querySelector('#available-vacation');
 let userSalary = document.forms[0].querySelector('#salary-input');
 let userDateofBirth = document.forms[0].querySelector('#dob-input');
-let userGender = document.forms[0].querySelector('input[name="os"]:checked');
 let userMartialStatues = document.forms[0].querySelector('#martial-status-input');
 let lastID = localStorage.getItem("lastID") || 1;
 userName.onblur = function (){
@@ -102,11 +99,7 @@ userName.onblur = function (){
     userName.removeAttribute("style");
   } 
 }
-userID.onblur = function (){
-  if(userID.value != "" && userID.value.match("[0-9]") &&  userID.value.length <= 14){
-    userID.removeAttribute("style");
-  } 
-}
+
 userEmail.onblur = function (){
   if(userEmail.value.match("[A-Za-z]+[0-9]*[@][A-Za-z]+[.][A-Za-z]+")){
     userEmail.removeAttribute("style");
@@ -122,16 +115,6 @@ userPhoneNumber.onblur = function (){
     userPhoneNumber.removeAttribute("style");
   } 
 }
-userApprovedVacations.onblur = function (){
-  if(userApprovedVacations.value != "" && userApprovedVacations.value.match("[0-9]+")){
-    userApprovedVacations.removeAttribute("style");
-  } 
-}
-userAvailableVacations.onblur = function (){
-  if(userAvailableVacations.value != "" && userAvailableVacations.value.match("[0-9]+")){
-    userAvailableVacations.removeAttribute("style");
-  } 
-}
 userSalary.onblur = function (){
   if(userSalary.value.match("[0-9]+")){
     userSalary.removeAttribute("style");
@@ -140,73 +123,66 @@ userSalary.onblur = function (){
 document.forms[0].onsubmit = function (ele){
   let validName = false,
       validEmail = false,
-      validID = false,
       validAddress = false,
       validPhone = false,
-      validApprovedVacations = false,
-      validAvailableVacations = false,
-      validSalary = false,
-      validDob = true;
-      if (userName.value != "" && userName.value.length > 2 && userName.value.match("[A-Za-z]+")){
+      validSalary = false;
+      if (userName.value != ""){
         validName = true; 
       }else {
         userName.style.cssText = "border: 1px solid red;";
       }
-      if (userID.value != "" && userID.value.match("[0-9]") &&  userID.value.length <= 14){
-        validID = true;
-      } else {
-        userID.style.cssText = "border: 1px solid red;";
-      }
-      if (userEmail.value.match("[A-Za-z]+[0-9]*[@][A-Za-z]+[.][A-Za-z]+")){
+      if (userEmail.value == "" || userEmail.value.match("[A-Za-z]+[0-9]*[@][A-Za-z]+[.][A-Za-z]+")){
         validEmail = true;
       }else {
         userEmail.style.cssText = "border: 1px solid red;";
       }
-      if (userAddress.value != "" && userAddress.value.length > 8 ){
+      if (userAddress.value == "" || userAddress.value.length > 8 ){
         validAddress = true;
       }else {
         userAddress.style.cssText = "border: 1px solid red;";
       }
-      if (userPhoneNumber.value != "" && userPhoneNumber.value.match("[0-9]+") && userPhoneNumber.value.length <= 15){
+      if (userPhoneNumber.value == "" || userPhoneNumber.value.match("[0-9]+") && userPhoneNumber.value.length <= 15){
         validPhone = true;
       }else {
         userPhoneNumber.style.cssText = "border: 1px solid red;";
       }
-      if (userApprovedVacations.value != "" && userApprovedVacations.value.match("[0-9]+") && userApprovedVacations.value > 0){
-        validApprovedVacations = true;
-      }else {
-        userApprovedVacations.style.cssText = "border: 1px solid red;";
-      }
-      if (userAvailableVacations.value != "" && userAvailableVacations.value.match("[0-9]+") && userAvailableVacations.value > 0){
-        validAvailableVacations = true;
-      }else {
-        userAvailableVacations.style.cssText = "border: 1px solid red;";
-      }
-      if (userSalary.value.match("[0-9]+") && userSalary.value > 2000){
+      if (userSalary.value == "" || userSalary.value.match("[0-9]+") && userSalary.value > 2000){
         validSalary = true;
       }else {
         userSalary.style.cssText = "border: 1px solid red;";
       }
-      if (validName === false || validEmail === false || validID === false || validAddress === false  ||
-        validPhone === false  || validApprovedVacations === false  || validAvailableVacations === false 
-      || validSalary === false  || validDob === false ){
+      if (validName === false || validAddress === false || validEmail === false || validPhone == false || 
+          validSalary == false){
         ele.preventDefault();
-        formErrorMessage.displayMessage();
+        userNotFound.displayMessage();
       }
-      else{
-        localStorage.setItem(`userName ${lastID}`,userName.value);
-        localStorage.setItem(`userEmail ${lastID}`,userEmail.value);
-        localStorage.setItem(`userID ${lastID}`,userID.value);
-        localStorage.setItem(`userAddress ${lastID}`,userAddress.value);
-        localStorage.setItem(`userPhoneNumber ${lastID}`,userPhoneNumber.value);
-        localStorage.setItem(`userApprovedVacations ${lastID}`,userApprovedVacations.value);
-        localStorage.setItem(`userAvailableVacations ${lastID}`,userAvailableVacations.value);
-        localStorage.setItem(`userSalary ${lastID}`,userSalary.value);
-        localStorage.setItem(`userDateofBirth ${lastID}`,userDateofBirth.value);
-        localStorage.setItem(`userGender ${lastID}`,userGender.value);
-        localStorage.setItem(`userMartialStatues ${lastID}`,userMartialStatues.value);
-        lastID++;
-        localStorage.setItem(`lastID`,lastID);
+      else if (validName === true){
+        let found = false;
+        for (let i = 1; i < lastID && found === false; i++){
+          let name = localStorage.getItem(`userName ${i}`);
+          if (name == userName.value){
+              if (userEmail.value != ""){
+                localStorage.setItem(`userEmail ${i}`,userEmail.value);
+              }
+              if (userAddress.value != ""){
+                localStorage.setItem(`userAddress ${i}`,userAddress.value);
+              }
+              if (userPhoneNumber.value != ""){
+                localStorage.setItem(`userPhoneNumber ${i}`,userPhoneNumber.value);
+              }
+              if (userSalary.value != ""){
+                localStorage.setItem(`userSalary ${i}`,userSalary.value);
+              }
+              if (userMartialStatues.value != ""){
+                localStorage.setItem(`userMartialStatues ${i}`,userMartialStatues.value);
+              }
+            found = true;
+          }
+        }
+        if (found === false){
+          ele.preventDefault();
+          userNotFound.displayMessage();
+        }
       }
 };
 let clicked = false;
@@ -220,12 +196,6 @@ function open_list() {
     clicked = false;
   }
 }
-function set_today_date(object) {
-  const input_date = object;
-  const date = new Date();
-  input_date.value = `${date.getFullYear()}-${(date.getMonth()+1).toString().padStart(2,'0')}-${date.getDate()}`
-}
-set_today_date(document.getElementById('dob-input'));
 let header_link_elements = document.querySelectorAll(".header .header-content .page-links ul li");
 header_link_elements.forEach(function(ele) {
     ele.onclick = function() {
@@ -285,13 +255,3 @@ list_symbol.onclick = function (){
     list_opend = false;
   }
 };
-// `
-//   <ul id="small-links">
-//     <li><a href="index.html">home</a></li>
-//     <li><a href="search.html">search</a></li>
-//     <li><a href="#">add</a></li>
-//     <li><a href="update.html">Update</a></li>
-//     <li><a href="submitvacation.html">submit vacation</a></li>
-//     <li><a href="list_vacations.html">vacations list</a></li>
-//   </ul>
-// `

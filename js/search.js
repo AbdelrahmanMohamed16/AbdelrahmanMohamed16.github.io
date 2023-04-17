@@ -69,6 +69,9 @@ function open_list() {
     clicked = false;
   }
 }
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
 let list_symbol = document.querySelector('.symbol');
 let list_opend = false;
 let list = document.createElement('ul');
@@ -120,6 +123,51 @@ list_symbol.onclick = function (){
   }
 };
 let last_ID = localStorage.getItem('lastID');
+class card {
+  constructor(n = "", id = "") {
+    this.name = n;
+    this.id = id;
+    this.cardStructure = `
+    <img src="images\\pic${getRandomInt(3)}.jpg" alt="" class = "image">
+    <div class="text">
+      <p>
+        name: ${this.name}
+      </p>
+
+      <p>
+        ID: ${this.id}
+      </p>
+    </div>
+    <a href="submitvacation.html"><button type="button" class="button">apply vacation form</button></a>
+    `;
+  }
+  displayCard() {
+    let d = document.createElement('div');
+    d.className = "emm";
+    d.innerHTML = this.cardStructure;
+    let container = document.querySelector('.em');
+    container.appendChild(d);
+  }
+};
 for (let i = 1; i < last_ID; i++){
-  
+  let name = localStorage.getItem(`userName ${i}`);
+  let id = localStorage.getItem(`userID ${i}`);
+  let Card = new card(name,id);
+  console.log(Card);
+  Card.displayCard();
+}
+let searchButton = document.querySelector('#searchbutton');
+searchButton.onclick = function(ele){
+  let searchInput = document.querySelector('#searchinput');
+  let searchName = searchInput.value;
+  let container = document.querySelector('.em');
+  container.innerHTML = "";
+  for (let i = 1; i < last_ID; i++){
+    let name = localStorage.getItem(`userName ${i}`);
+    if(name == searchName){
+      let id = localStorage.getItem(`userID ${i}`);
+      let Card = new card(name,id);
+      Card.displayCard();
+    }
+  }
 }

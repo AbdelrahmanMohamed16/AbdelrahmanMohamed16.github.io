@@ -148,17 +148,12 @@ let close_message = function (object) {
 let formErrorMessage = new message("invalid data, please insure that you inserted correct data.","ok","form-error");
 let userID = document.forms[0].querySelector(`#input-id`);
 let vacationReason = document.forms[0].querySelector(`#input-reason`);
-let vacationFromDate = document.forms[0].querySelector(`#input-from-date`);
-let vacationToDate = document.forms[0].querySelector(`#input-to-date`);
-let vacation_ID = 1;
+let vacationFromDate = document.forms[0].querySelector(`input-from-data`);
+let vacationToDate = document.forms[0].querySelector(`input-to-data`);
+let vacationID = localStorage.getItem("vacationID") || 1;
 userID.onblur = function (){
   if(userID.value != "" && userID.value.match("[0-9]") &&  userID.value.length <= 14){
     userID.removeAttribute("style");
-  } 
-}
-vacationReason.onblur = function (){
-  if(vacationReason.value.match("[A-Za-z]+[0-9]*[@][A-Za-z]+[.][A-Za-z]+")){
-    vacationReason.removeAttribute("style");
   } 
 }
 document.forms[0].onsubmit = function (ele){
@@ -169,15 +164,10 @@ document.forms[0].onsubmit = function (ele){
       else {
         userID.style.cssText = "border: 1px solid red;";
       }
-      if (validID === false || validFromDate === false || validToDate === false){
+      if (validID === false){
         ele.preventDefault();
         formErrorMessage.displayMessage();
       }
       else{
-        localStorage.setItem(`vacationID`,vacation_ID)
-        localStorage.setItem(`userID ${lastID}`,userID.value);
-        localStorage.setItem(`vacationReason ${lastID}`,vacationReason.value);
-        vacation_ID++;
-        localStorage.setItem(`lastID`,vacation_ID);
       }
 };

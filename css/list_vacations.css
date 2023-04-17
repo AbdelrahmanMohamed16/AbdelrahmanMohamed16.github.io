@@ -1,6 +1,8 @@
 body {
     margin: 0;
     font-family: 'cairo',sans-serif;
+    display: flex;
+    flex-direction: column;
 }
 .card{
     width: 40%;

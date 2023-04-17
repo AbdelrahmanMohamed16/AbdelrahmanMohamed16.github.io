@@ -3,7 +3,8 @@ body {
     text-align: center;
     color:#40514E;
     font-family: 'Cairo', sans-serif;
-    
+    display: flex;
+    flex-direction: column;
   }
   p
   {
