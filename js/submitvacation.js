@@ -93,8 +93,8 @@ li3.append(link3);
 list.append(li3);
 let li4 = document.createElement('li');
 let link4 = document.createElement('a');
-link4.setAttribute('href','udate.html');
-link4.append("udate");
+link4.setAttribute('href','update.html');
+link4.append("update");
 li4.append(link4);
 list.append(li4);
 let li5 = document.createElement('li');
@@ -180,7 +180,10 @@ document.forms[0].onsubmit = function (ele){
       else {
         userID.style.cssText = "border: 1px solid red;";
       }
-      if (toDateArray[0] >= fromDateArray[0] && toDateArray[1] >= fromDateArray[1] && toDateArray[2] > fromDateArray[2]){
+      if (toDateArray[0] >= fromDateArray[0] && toDateArray[1] >= fromDateArray[1]){
+        if (toDateArray[1] == fromDateArray[1]){
+          validDates = (toDateArray[2] > fromDateArray[2])? true: false;
+        }
         validDates = true;
       }
       else {

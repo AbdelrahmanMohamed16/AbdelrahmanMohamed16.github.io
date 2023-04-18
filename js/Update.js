@@ -93,6 +93,7 @@ let userPhoneNumber = document.forms[0].querySelector('#phone-input');
 let userSalary = document.forms[0].querySelector('#salary-input');
 let userDateofBirth = document.forms[0].querySelector('#dob-input');
 let userMartialStatues = document.forms[0].querySelector('#martial-status-input');
+let userAvailableVacations = document.forms[0].querySelector('#available-vacations-input');
 let lastID = localStorage.getItem("lastID") || 1;
 userName.onblur = function (){
   if(userName.value != "" && userName.value.length > 2 && userName.value.match("[A-Za-z]+")){
@@ -120,12 +121,18 @@ userSalary.onblur = function (){
     userSalary.removeAttribute("style");
   } 
 }
+userAvailableVacations.onblur = function (){
+  if(userAvailableVacations.value.match("[0-9]+")){
+    userAvailableVacations.removeAttribute("style");
+  } 
+}
 document.forms[0].onsubmit = function (ele){
   let validName = false,
       validEmail = false,
       validAddress = false,
       validPhone = false,
-      validSalary = false;
+      validSalary = false,
+      validUserAvailableVacations = false;
       if (userName.value != ""){
         validName = true; 
       }else {
@@ -151,8 +158,13 @@ document.forms[0].onsubmit = function (ele){
       }else {
         userSalary.style.cssText = "border: 1px solid red;";
       }
+      if (userAvailableVacations.value == "" || userAvailableVacations.value.match("[0-9]+")){
+        validUserAvailableVacations = true;
+      }else {
+        userSalary.style.cssText = "border: 1px solid red;";
+      }
       if (validName === false || validAddress === false || validEmail === false || validPhone == false || 
-          validSalary == false){
+          validSalary == false || validUserAvailableVacations === false){
         ele.preventDefault();
         userNotFound.displayMessage();
       }
@@ -175,6 +187,9 @@ document.forms[0].onsubmit = function (ele){
               }
               if (userMartialStatues.value != ""){
                 localStorage.setItem(`userMartialStatues ${i}`,userMartialStatues.value);
+              }
+              if (userAvailableVacations.value != ""){
+                localStorage.setItem(`userAvailableVacations ${i}`,userAvailableVacations.value);
               }
             found = true;
           }
@@ -229,8 +244,8 @@ li3.append(link3);
 list.append(li3);
 let li4 = document.createElement('li');
 let link4 = document.createElement('a');
-link4.setAttribute('href','udate.html');
-link4.append("udate");
+link4.setAttribute('href','#');
+link4.append("update");
 li4.append(link4);
 list.append(li4);
 let li5 = document.createElement('li');

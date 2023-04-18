@@ -222,21 +222,6 @@ function open_list() {
     clicked = false;
   }
 }
-function set_today_date(object) {
-  const input_date = object;
-  const date = new Date();
-  input_date.value = `${date.getFullYear()}-${(date.getMonth()+1).toString().padStart(2,'0')}-${date.getDate()}`
-}
-set_today_date(document.getElementById('dob-input'));
-let header_link_elements = document.querySelectorAll(".header .header-content .page-links ul li");
-header_link_elements.forEach(function(ele) {
-    ele.onclick = function() {
-    header_link_elements.forEach(function (ele) {
-      ele.classList.remove("active")
-    });
-    this.classList.add("active");
-  };
-});
 let list_symbol = document.querySelector('.symbol');
 let list_opend = false;
 let list = document.createElement('ul');
@@ -261,8 +246,8 @@ li3.append(link3);
 list.append(li3);
 let li4 = document.createElement('li');
 let link4 = document.createElement('a');
-link4.setAttribute('href','udate.html');
-link4.append("udate");
+link4.setAttribute('href','update.html');
+link4.append("update");
 li4.append(link4);
 list.append(li4);
 let li5 = document.createElement('li');
@@ -287,3 +272,19 @@ list_symbol.onclick = function (){
     list_opend = false;
   }
 };
+
+function set_today_date(object) {
+  const input_date = object;
+  const date = new Date();
+  input_date.value = `${date.getFullYear()}-${(date.getMonth()+1).toString().padStart(2,'0')}-${date.getDate()}`
+}
+set_today_date(document.getElementById('dob-input'));
+let header_link_elements = document.querySelectorAll(".header .header-content .page-links ul li");
+header_link_elements.forEach(function(ele) {
+    ele.onclick = function() {
+    header_link_elements.forEach(function (ele) {
+      ele.classList.remove("active")
+    });
+    this.classList.add("active");
+  };
+});

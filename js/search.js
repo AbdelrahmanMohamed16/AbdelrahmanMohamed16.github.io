@@ -96,8 +96,8 @@ li3.append(link3);
 list.append(li3);
 let li4 = document.createElement('li');
 let link4 = document.createElement('a');
-link4.setAttribute('href','udate.html');
-link4.append("udate");
+link4.setAttribute('href','update.html');
+link4.append("update");
 li4.append(link4);
 list.append(li4);
 let li5 = document.createElement('li');
@@ -127,8 +127,10 @@ class card {
   constructor(n = "", id = "") {
     this.name = n;
     this.id = id;
+    this.number = getRandomInt(3);
+    this.imgNumber = (this.number == 0) ? 1 : this.number;
     this.cardStructure = `
-    <img src="images\\pic${getRandomInt(3) == 0?1:getRandomInt(3)}.jpg" alt="" class = "image">
+    <img src="images\\pic${this.imgNumber}.jpg" alt="" class = "image">
     <div class="text">
       <p>
         name: ${this.name}

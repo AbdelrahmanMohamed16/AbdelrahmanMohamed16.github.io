@@ -5,6 +5,8 @@ body {
     font-family: 'Cairo', sans-serif;
     display: flex;
     flex-direction: column;
+    height: 100vh;
+
   }
   p
   {
