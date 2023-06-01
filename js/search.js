@@ -127,10 +127,8 @@ class card {
   constructor(n = "", id = "") {
     this.name = n;
     this.id = id;
-    this.number = getRandomInt(3);
-    this.imgNumber = (this.number == 0) ? 1 : this.number;
     this.cardStructure = `
-    <img src="images\\pic${this.imgNumber}.jpg" alt="" class = "image">
+    <img src="images\\user-icon.png" alt="" class = "image">
     <div class="text">
       <p>
         name: ${this.name}
